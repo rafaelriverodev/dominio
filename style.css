@@ -1,55 +1,107 @@
+/* Estilos actualizados y adaptados */
 body {
+    background: #eda358;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f7f6;
     margin: 0;
     padding: 20px;
+}
+
+header, main {
     text-align: center;
 }
 
-header {
-    margin-bottom: 40px;
+main {
+    margin-top: 30px;
 }
 
-.search-box {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
+/* Contenedor blanco de la búsqueda */
+.search-box-container {
+    background: #fff;
+    border-radius: 50px; /* Bordes redondeados para el contenedor principal */
+    padding: 10px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: inline-flex; /* Para que el botón y el input estén alineados */
+    align-items: center;
+    width: 90%;
+    max-width: 800px; /* Caja más ancha */
 }
 
-input {
-    padding: 12px;
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* La caja de texto (Input) con fuente grande */
+#domainInput {
+    flex: 1;
+    border: none;
+    padding: 15px;
+    font-size: 1.4rem; /* Fuente más grande */
+    outline: none;
+    background: white;
+    min-width: 200px;
 }
 
-button {
-    padding: 12px 25px;
-    background: #007bff;
+/* Botón adaptado al nuevo tamaño del input */
+.search-box-container button {
+    background: #ff8605;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
+.search-box-container button:hover {
+    background: #e67700;
+}
+
+/* Grid de resultados */
 .results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    max-width: 1000px;
+    padding: 40px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgb(106, 225, 255);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.card.unavailable {
+    background: #369bff;
+    opacity: 0.7;
 }
 
 .price {
-    font-size: 1.5rem;
-    color: #28a745;
+    font-size: 28px; /* Precio un poco más grande */
     font-weight: bold;
+    color: #ff8605;
+    margin: 15px 0;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+}
+
+/* Adaptación para móviles */
+@media (max-width: 600px) {
+    .search-box-container {
+        flex-direction: column;
+        border-radius: 20px;
+        width: 100%;
+    }
+    
+    #domainInput {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .search-box-container button {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
