@@ -5,6 +5,7 @@ const MARGIN = 1.50;
 const domainData = {
     ".com": 15.95,
     ".es": 14.95,
+    ".cl": 14.95,
     ".net": 14.95
 };
 
